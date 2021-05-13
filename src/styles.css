@@ -1,0 +1,93 @@
+body {
+  background: linear-gradient(40deg, #e4dfda, #8b95c9);
+}
+
+.container {
+  max-width: 1000px;
+  background-color: #478978;
+  padding: 5px auto;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+h1 {
+  text-align: center;
+  color: #478978;
+  font-family: "Roboto", sans-serif;
+  line-height: 70px;
+  font-size: 44px;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  color: #478978;
+  font-weight: 300;
+  font-size: 22px;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  border: thin;
+  font-size: 22px;
+  color: #84dcc6;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+hr {
+  color: #478978;
+}
+
+input[type="submit"] {
+  background-color: #8b95c9;
+  border-color: white;
+  color: white;
+}
+
+input[type="submit"]:hover {
+  transition: all, ease-in-out, 200ms;
+  background-color: #fff;
+  border-color: #8b95c9;
+  color: #8b95c9;
+  cursor: pointer;
+}
+
+.card {
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  border-color: #8b95c9;
+}
+
+.card-header {
+  color: #478978;
+  border-color: #8b95c9;
+}
+
+.card-date {
+  font-weight: lighter;
+}
+
+.border-info {
+  border-color: yellow;
+}
+
+.col-3 {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  border-color: #8b95c9;
+}
+
+.dynamic {
+  text-align: left;
+}
+
+.col {
+  text-align: center;
+}
