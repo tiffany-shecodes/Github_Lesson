@@ -33,6 +33,7 @@ h3 {
   border: thin;
   font-size: 22px;
   color: #84dcc6;
+  text-transform: capitalize;
 }
 
 p {

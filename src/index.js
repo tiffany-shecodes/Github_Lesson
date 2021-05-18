@@ -3,6 +3,9 @@ let now = new Date();
 let h2 = document.querySelector("#date");
 let date = now.getDate();
 let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
@@ -20,12 +23,11 @@ h2.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`
 function showTemperature(response) {
 document.querySelector("#city").innerHTML = response.data.name;
 document.querySelector("#temperature").innerHTML = Math.round(
-  response.data.main.temp
-  );
+  response.data.main.temp);
 
 document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round (response.data.wind.speed);
-document.querySelector("#description").innerHTML = response.data.weather[0].main;
+document.querySelector("#description").innerHTML = response.data.weather[0].description;
 }
 
 function searchCity(city){
