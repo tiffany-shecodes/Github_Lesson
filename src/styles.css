@@ -2,15 +2,12 @@ body {
   background: linear-gradient(40deg, #e4dfda, #8b95c9);
 }
 
-.container {
+.card-holder {
   max-width: 1000px;
-  background-color: #478978;
-  padding: 5px auto;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
+  padding: 20px;
+  border: 1px solid #478978;
+  border-radius: 5px;
+  margin: 30px auto;
 }
 
 h1 {
@@ -18,7 +15,9 @@ h1 {
   color: #478978;
   font-family: "Roboto", sans-serif;
   line-height: 70px;
-  font-size: 44px;
+  font-size: 34px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -26,6 +25,7 @@ h2 {
   color: #478978;
   font-weight: 300;
   font-size: 22px;
+  margin-bottom: 0;
 }
 
 h3 {
@@ -38,6 +38,19 @@ h3 {
 p {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+  color: #478978;
+  font-size: 22px;
+  font-weight: 100;
 }
 
 hr {
