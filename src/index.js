@@ -51,8 +51,8 @@ function searchLocation(position){
    let apiKey = "5bcf7fff2a57c3f50f82590866ff2fbb";
    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
-
-  }
+  
+}
 
 function getCurrentLocation(event){
   event.preventDefault();
@@ -74,7 +74,7 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
  
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit)
+searchForm.addEventListener("submit", handleSubmit);
 
  
 let currentLocation = document.querySelector("#current-location");
