@@ -18,10 +18,11 @@ let month = months[now.getMonth()];
 h2.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`
 
 
-celsiusTemperature = response.data.main.temp;
+
 
 function showTemperature(response) {
 document.querySelector("#city").innerHTML = response.data.name;
+celsiusTemperature = response.data.main.temp;
 document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
   let iconElement = document.querySelector("#icon");
 

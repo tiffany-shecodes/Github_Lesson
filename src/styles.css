@@ -79,9 +79,11 @@ input[type="submit"]:hover {
   border-color: #8b95c9;
 }
 
-.card-header {
+.weather-forecast-day {
   color: #478978;
   border-color: #8b95c9;
+  text-align: center;
+  opacity: 0.6;
 }
 
 .card-date {
@@ -126,4 +128,14 @@ input[type="submit"]:hover {
 .active:hover {
   text-decoration: none;
   color: #84dcc6;
+}
+
+.weather-forecast-temperatures {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.weather-forecast-temperatures-min {
+  opacity: 0.5;
 }
