@@ -18,6 +18,32 @@ let month = months[now.getMonth()];
 h2.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`
 
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+days.forEach(function (day) {
+  forecastHTML = forecastHTML + 
+  `                                        
+  <div class="col-2">         
+  <div class="weather-forecast-day">${day}</div>
+  <img src="https://openweathermap.org/themes/openweathermap/assets/img/landing/icon-4.png" alt="" width="42" />
+  <div class="weather-forecast-temperatures">
+  <span class="weather-forecast-temperatures-max">33°</span>
+  <span class="weather-forecast-temperatures-min">12°</span>
+  </div>
+  </div>
+  `;
+}) 
+
+  
+
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
 
 
 function showTemperature(response) {
@@ -33,6 +59,7 @@ document.querySelector("#wind").innerHTML = Math.round (response.data.wind.speed
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) = ``;
 iconElement.setAttribute("alt", response.data.weather[0].description);
+
 }
 
 function searchCity(city){
@@ -82,6 +109,7 @@ temperatureElement.innerHTML = Math.round(celsiusTemperature);
 let celsiusTemperature = null;
 
 
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
@@ -99,3 +127,4 @@ currentLocation.addEventListener("click", getCurrentLocation);
 
 searchCity("London");
 
+displayForecast();
