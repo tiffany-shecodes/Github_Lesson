@@ -57,7 +57,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "5bcf7fff2a57c3f50f82590866ff2fbb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayForecast);
@@ -67,7 +66,7 @@ function showTemperature(response) {
 document.querySelector("#city").innerHTML = response.data.name;
 celsiusTemperature = response.data.main.temp;
 document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
-  let iconElement = document.querySelector("#icon");
+let iconElement = document.querySelector("#icon");
 
 document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round (response.data.wind.speed);
