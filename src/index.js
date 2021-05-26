@@ -18,11 +18,11 @@ let month = months[now.getMonth()];
 h2.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`
 
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="row">`;
 days.forEach(function (day) {
   forecastHTML = forecastHTML + 
   `                                        
@@ -35,9 +35,7 @@ days.forEach(function (day) {
   </div>
   </div>
   `;
-}) 
-
-  
+}); 
 
 
   forecastHTML = forecastHTML + `</div>`;
@@ -45,6 +43,11 @@ days.forEach(function (day) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates){
+  let apiKey = "5bcf7fff2a57c3f50f82590866ff2fbb";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayForecast);
+}
 
 function showTemperature(response) {
 document.querySelector("#city").innerHTML = response.data.name;
@@ -52,13 +55,14 @@ celsiusTemperature = response.data.main.temp;
 document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
   let iconElement = document.querySelector("#icon");
 
-  
-
 document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round (response.data.wind.speed);
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`) = ``;
 iconElement.setAttribute("alt", response.data.weather[0].description);
+
+
+getForecast(response.data.coord);
 
 }
 
@@ -127,4 +131,3 @@ currentLocation.addEventListener("click", getCurrentLocation);
 
 searchCity("London");
 
-displayForecast();
